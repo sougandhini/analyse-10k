@@ -1,5 +1,5 @@
 # analyse-10k
-A system that analyses the Form-10K submitted by companies to SEC
+A RAG system answers questions on Form-10K submitted by companies to SEC by quoting the exact extracted paragraph.
 
 ### What is 10-K?
 Form 10K is an annual financial report that the publicly listed US companies should file with the SEC.It runs to hundreds of pages. 
