@@ -1,5 +1,5 @@
 # analyse-10k
-A RAG system answers questions on Form-10K submitted by companies to SEC by quoting the exact extracted paragraph.
+A RAG system that answers questions on Form-10K (submitted by companies to SEC) by quoting the exact extracted paragraph.
 
 ### What is 10-K?
 Form 10K is an annual financial report that the publicly listed US companies should file with the SEC.It runs to hundreds of pages. 
@@ -67,7 +67,7 @@ EDGAR 10-K (HTML)
 | Language | Python 3.12 |
 | API | FastAPI |
 | Database | PostgreSQL with pgvector |
-| Embeddings | Open-source sentence-transformers model (runs locally, free) |
+| Embeddings | BAAI/bge-small-en-v1.5 (sentence-transformers, 384 dimensions) |
 | LLM | Provider API, selected through environment variables |
 | Parsing | BeautifulSoup |
 | Tests / evals | pytest plus a custom eval runner |
@@ -106,6 +106,7 @@ Each run scores three checks:
 1. **Answer correctness:** does the answer contain the expected fact or figure?
 2. **Citation grounding:** does a cited chunk actually contain the evidence text?
 3. **Abstention:** for unanswerable questions, does the system say it cannot find the answer instead of guessing?
+4. **retrieval hit@k:** does any retrieved chunk contain the evidence_text? 
 
 Results are saved per run so I can change one thing (chunk size, number of retrieved chunks, prompt wording) and compare scores.
 
@@ -122,3 +123,7 @@ Results are saved per run so I can change one thing (chunk size, number of retri
 - [ ] Baseline scores recorded below
 - [ ] One experiment run (for example chunk size) with before/after scores
 
+
+## RESULTS
+
+## KNOWN LIMITATIONS
