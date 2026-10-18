@@ -112,8 +112,8 @@ Results are saved per run so I can change one thing (chunk size, number of retri
 
 ## Phase 1 milestones
 
-- [ ] Repo, Docker Compose, Postgres with pgvector running
-- [ ] Download one 10-K from EDGAR (with a declared User-Agent, as SEC requires)
+- [X] Repo, Docker Compose, Postgres with pgvector running
+- [X] Download one 10-K from EDGAR (with a declared User-Agent, as SEC requires)
 - [ ] Section splitting works on the chosen filing
 - [ ] Chunking with section labels
 - [ ] Embeddings stored and similarity search returns sensible chunks
