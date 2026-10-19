@@ -2,3 +2,4 @@
 venv
 myREADME.md
 data
+__pycache__/
